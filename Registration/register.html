@@ -1,0 +1,64 @@
+<html>
+<head>
+   <style>
+  	.error{
+    	color:brown;
+        font-style: bold;
+    }
+  </style>
+</head>
+<body>
+	<div>
+    	<div>
+        	<div>
+            	<div>
+                	Registration
+                </div>
+                <div>
+                	<form id = "registration">
+                    	<input type = "text" name = "username" placeholder = "Username"/>
+                        <br/>
+                        <input type ="text"  name = "email" placeholder = "Email"/>
+                        <br/>
+                        <input type ="password" name = "password" placeholder = "Password" id = "password"/>
+                        <br/>
+                        <input type ="password" name = "confirm" placeholder = "Confirm Password"/>
+                        <br/>
+                        <input type ="text" name = "fname" placeholder = "First Name"/>
+                        <br/>
+                        <input type ="text"  name = "lname" placeholder = "Last Name"/>
+                        <br/>
+                        <div class = "gender">
+							<input type="radio" name="gender" class = "form-contorl"/>Male
+							<input type="radio" name="gender" class = "form-contorl"/>Female
+                        </div>
+                        <br/>
+                        <div class = "hobbies">
+                        	<input type="checkbox" name = "hobbies">Cricket
+							<input type="checkbox" name = "hobbies">Football
+							<input type="checkbox" name = "hobbies">Hockey
+                        	<input type="checkbox" name = "hobbies">Tennis
+                        </div>
+                        <br/>
+                        <select name = "country">
+                        	<option value="0" selected="" disabled="">--SELECT--</option>
+                            <option>India</option>
+                            <option>Australia</option>
+                            <option>Japan</option>
+                            <option>China</option>
+                            <option>South Africa</option>
+                        </select>
+                        <br/>
+                        <textarea name = "address" placeholder="Address"></textarea>
+                        <br/>
+                        <button type = "submit" >Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+    <script src="register.js"></script>  
+</body>
+</html>

@@ -1,0 +1,66 @@
+body{
+    margin:0;
+    padding:0;
+    font-family : sans-serif;
+    background: url(images.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width :450px;
+  background: #fff;
+  padding: 45px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0,0,0,-1);
+  box-shadow:  0 5px 10px rgba(0,0,0,-2);
+
+}
+.container h2
+{
+    text-align: center;
+    margin: 0 0 40px;
+    padding:0;
+    color : rgb(66,133,244);
+    letter-spacing: 2px;
+}
+.container input
+{
+    padding: 5px;
+    margin-bottom: 30px;
+    width :100%;
+    box-sizing: border-box;
+    box-shadow: none;
+    outline: none;
+    border: none;
+    border-bottom:  2px solid #999;
+
+}
+
+.container form div{
+    position: relative;
+}
+
+
+.container input:focus ,
+.container input:valid 
+{
+    border-bottom: 2px solid rgb(66,133,244);
+}
+.container button
+{
+    border-radius: 25px;
+    height: 40px;
+    width :100%;
+    cursor: pointer;
+    background: rgb(66,133,244);
+    color: #fff;
+    margin-bottom: 0;
+}
+.container button :hover{
+    background: #f7497d;
+}

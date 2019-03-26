@@ -1,0 +1,192 @@
+<html>
+    <head>
+        <title>Form Validation</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+        </script>
+    </head>
+    <body>
+        <div class="container">
+             <h2> Register </h2>
+             <form id="frm">
+                 <div>
+                     <input type="text" name="" id="fname" required="">
+                     <span class="error" id="fnameerr"></span>
+                     <label>
+                         First Name
+                     </label>
+                 </div>
+                 <div>
+                    <input type="text" name="" id="lname" required=""> 
+                    <span class="error" id="lnameerr"></span>
+                    <label>
+                        Last Name
+                    </label>
+                 </div>
+                 <div>
+                    <input type="text" name="" id="email" required="">
+                    <span class="error" id="emailerr"></span>
+                    <label>
+                        E-mail Id
+                    </label>
+                 </div> 
+                 <div>
+                    <input type="password" name="" id="password" required="">
+                    <span class="error" id="passworderr"></span>
+                    <label>
+                        Password    
+                    </label>
+                 </div>
+                 <div>
+                    <input type="password" name="" id="repassword" required="">
+                    <span class="error" id="repassworderr"></span>
+                    <label>
+                        Re-Enter Password
+                    </label>
+                </div>
+                <input type="submit" value="Register" name="">   
+            </form>
+         </div>
+       
+        <script>
+            $(function()
+            {
+                $("#fnameerr").hide();
+                $("#lnameerr").hide();
+                $("#emailerr").hide();
+                $("#passworderr").hide();
+                $("#repassworderr").hide();
+
+                var e_fname = false;
+                var e_lname =false;
+                var e_email = false;
+                var e_pass = false;
+                var e_repass = false;   
+                              
+
+                $("#fname").focusout(function(){
+                       checkfname();
+                });
+                $("#lname").focusout(function()
+                {
+                       checklname();
+                });
+                $("#email").focusout(function()
+                {
+                       checkemail();
+                });
+                $("#password").focusout(function()
+                {
+                        checkpass();
+                });
+                $("#repassword").focusout(function()
+                {
+                        checkrepass();
+                }); 
+
+                function checkfname()
+                {
+                    var p = /^[a-zA-Z]+$/;
+                    var fname = $("#fname").val();
+                    if(p.test(fname) && fname !== '')
+                    {
+                        $("#fnameerr").hide();
+                        $("#fname").css("boder-bottom","2px solid #34F458");
+                    }else{
+                       
+                            $("#fnameerr").html("Only Alphbetic");
+                            $("#fnameerr").show();
+                            $("#fname").css("boder-bottom","2px solid #F90A0A");
+                            e_fname = true;
+                        
+                       }
+                }
+                function checklname()
+                {
+                    var pa = /^[a-zA-Z]+$/;
+                    var lname = $("#lname").val();
+                    if(pa.test(lname) && lname !== '')
+                    {
+                        $("#lnameerr").hide();
+                        $("#lname").css("boder-bottom","2px solid #34F458");
+                    }else{
+                            $("#lnameerr").html("Only Alphbetic");
+                            $("#lnameerr").show();
+                            $("#lname").css("boder-bottom","2px solid #F90A0A");
+                            e_lname = true;
+                        
+                       }
+                }
+                function  checkpass()
+                {
+                    var passlen = $("#password").val().length;
+                    if(passlen < 8){
+                            $("#passworderr").html("Atleast 8 Characters ");
+                            $("#passworderr").show();
+                            $("#password").css("boder-bottom","2px solid #F90A0A");
+                            e_pass = true;
+                    } else{
+                        $("#passworderr").hide();
+                        $("#password").css("boder-bottom","2px solid #34F458");
+                    }
+                }
+                function checkrepass()
+                {   
+                    var password = $("#password").val();
+                    var repassword = $("#repassword").val();
+                     if(password != repassword )
+                     {
+                        $("#repassworderr").html("Atleast 8 Characters ");
+                        $("#repassworderr").show();
+                        $("#repassword").css("boder-bottom","2px solid #F90A0A");
+                        e_repass = true;
+                     }else{
+                        $("#repassworderr").hide();
+                        $("#repassword").css("boder-bottom","2px solid #34F458");
+                     }
+                }
+                function checkemail()
+                {
+                    var pat = /^[a-zA-Z\d._]{3,64}\@([a-z0-9]+)\.[a-z]+(.[a-z]+)?$/;
+                    var email = $("#email").val();
+                    if(pat.test(email) && email !== '')
+                    {
+                        $("#emailerr").hide();
+                        $("#email").css("boder-bottom","2px solid #34F458");
+                    }else{
+                        
+                            $("#emailerr").html("Please enter a valid email address");
+                            $("#emailerr").show();
+                            $("#email").css("boder-bottom","2px solid #F90A0A");
+                            e_email = true;
+                        
+                       }
+                }
+                $("#frm").submit(function(){
+                     e_fname = false;
+                     e_lname =false;
+                     e_email = false;
+                     e_pass = false;
+                     e_repass = false;
+
+                     checkfname();
+                     checklname();
+                     checkemail();
+                     checkpass();
+                     checkrepass();
+
+                     if(e_fname === false && e_lname === false && e_email === false && e_pass === false && e_repass === false){
+                         alert("Registration Sucessfull");
+                         return true;
+                     }
+                     else {
+                        alert("Please Fill the Form Correct");
+                         return false;
+                     }
+                
+                });
+            });
+        </script>
+    </body>
+</html>

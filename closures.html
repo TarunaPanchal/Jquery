@@ -1,0 +1,80 @@
+<html>
+    <body>
+        <script>
+       
+        /*  function create() {
+   var counter = 0;
+	
+   return {
+      increment: function() {
+         counter++;
+      },
+	   print: function() {
+         console.log(counter);
+      }
+   }
+}
+
+var c = create();
+c.increment();
+c.print(); // Output = 1 ;
+
+
+*/ 
+
+ /* var name = "John";
+
+function sayHi() {
+  alert("Hi, " + name);
+}
+
+name = "Pete";
+
+sayHi(); // Output iS : Pete ;
+*/
+
+/*function makeWorker() {
+  var name = "Pete";
+
+  return function() {
+    alert(name);
+  };
+}
+
+var name = "John";
+
+var work = makeWorker();
+
+work(); // OutPut is : Pete ;
+*/
+/*function sumis(a,b,c)
+{   
+    var result1 = "Result is:" ;
+      
+       function sum()
+       {
+           return result1 + (a+b+c);
+       }
+       return sum();
+}
+var result = sumis(15,8,9);
+console.log(result);*/
+
+function sum1(a)
+ {
+   function val1(b)
+   {
+
+     function val2(c)
+     {
+         return a+b+c;
+     }
+     return val2;
+   }
+   return val1;
+ }
+ console.log(sum1(2)(3)(5));
+
+        </script>
+    </body>
+</html>

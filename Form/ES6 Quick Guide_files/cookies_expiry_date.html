@@ -1,0 +1,22 @@
+
+<!-- saved from url=(0062)https://www.tutorialspoint.com/es6/src/cookies_expiry_date.htm -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+      <script type="text/javascript"> 
+         function WriteCookie() {  
+            var now = new Date();  
+            now.setMonth( now.getMonth() + 1 );  
+            cookievalue = escape(document.myform.customer.value) + ";"  
+            document.cookie = "name=" + cookievalue;  
+            document.cookie = "expires=" + now.toUTCString() + ";"  
+            document.write ("Setting Cookies : " + "name = " + cookievalue );  
+         } 
+      </script> 
+   </head> 
+
+   <body> 
+      <form name="formname" action="https://www.tutorialspoint.com/es6/src/cookies_expiry_date.htm"> 
+         Enter Cookie Name: <input type="text" name="customer"> 
+         <input type="button" value="Set Cookie" onclick="WriteCookie()"> 
+      </form> 
+    
+</body></html>
